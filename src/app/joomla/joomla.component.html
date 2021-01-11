@@ -1,0 +1,24 @@
+<div class="example-container">
+  <mat-form-field appearance="fill">
+    <mat-label>Input</mat-label>
+    <input matInput [(ngModel)]='titre'>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Select an option</mat-label>
+    <mat-select [(value)]="type" [(ngModel)]='type' >
+      <mat-option>None</mat-option>
+      <mat-option value="sport">sport</mat-option>
+      <mat-option value="culture">culture</mat-option>
+      <mat-option value="poltique">poltique</mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Textarea</mat-label>
+    <textarea matInput  [(ngModel)]='article'></textarea>
+  </mat-form-field>
+</div>
+<button (click)='mod()'>modfier</button>
+<button (click)='sup()'>suprimer</button>

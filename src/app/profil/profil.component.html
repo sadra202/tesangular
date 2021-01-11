@@ -1,0 +1,80 @@
+
+  <div>
+    <p>
+  <mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)='ac()'>
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>My App</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <div class="profile "> <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1574583336/AAA/4.jpg"> </div>
+  </mat-toolbar>
+</p>
+  </div>
+<div class='form'>
+  <form [formGroup]='art'>
+<div class="example-container">
+  <mat-form-field appearance="fill">
+    <mat-label>entrerv votre titre</mat-label>
+    <input matInput   formControlName='titre' >
+    <mat-error *ngIf="art.hasError('required', 'titre')">titre is required</mat-error>
+  </mat-form-field>
+  </div>
+  <div class="example-container">
+  <mat-form-field appearance="fill">
+    <mat-label>Select an option</mat-label>
+    <mat-select [(value)]="type"  formControlName='type'>
+      <mat-option>None</mat-option>
+      <mat-option value="sport">sport</mat-option>
+      <mat-option value="culture">culture</mat-option>
+      <mat-option value="poltique">poltique</mat-option>
+    </mat-select>
+  </mat-form-field>
+  </div>
+  <div class="example-container">
+  <mat-form-field class="example-full-width">
+    <mat-label>Leave a comment</mat-label>
+    <textarea matInput placeholder="Ex. It makes me feel..."   formControlName='article'></textarea>
+  </mat-form-field>
+  </div>
+  <div>
+    <button mat-button color="primary" type="submit" [disabled]='!art.valid' (click)='onSumbit()'>valider</button>
+  </div>
+ 
+</form>
+</div>
+<div class='tab'>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">titre</th>
+        <th scope="col">type</th>
+        <th scope="col">date</th>
+        <th scope="col">article</th>
+        <th scope="col">parmetere</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let article of tes.tabjf,index as i">
+        <th scope="row">{{i+1}}</th>
+        <td>{{article.titre}}</td>
+        <td>{{article.type}}</td>
+        <td>{{article.date}}</td>
+        <td>{{article.article}} </td>
+        <td><button (click)='mod(i)'>modifer</button></td>
+        
+
+      </tr>
+      </tbody>
+  </table>
+
+</div>
+  
+
+

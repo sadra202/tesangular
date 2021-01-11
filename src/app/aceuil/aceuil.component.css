@@ -1,0 +1,13 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+body {
+  background-image: url("https://www.studyrama.com/IMG/arton94853.png");
+  background-repeat: repeat;
+  background-size: 100% 100% !important;
+  }
+.b{
+  margin-top: 5% !important;
+  padding: 5% !important;
+}
+.form-check-label{
+  color: red;
+}

@@ -1,0 +1,112 @@
+<div *ngIf='tab.testGlobal'>
+  
+    
+    <mat-toolbar class="a" >
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)='inter()'>
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>nos journal</span>
+        <span class="example-spacer"></span>
+        <!--gjhnkl;mm-->
+        
+        
+        
+      </mat-toolbar>
+      
+        <!--d-->
+       
+        <!--f-->
+
+
+      <div class="b">
+
+      <div class="container ">
+        <div class="row">
+          <div class="col-sm-8"><h3><span class="badge bg-secondary">inscri</span></h3>
+            <div>
+                <form [formGroup]='user'>
+                  <p>
+                  <mat-form-field appearance="legacy">
+                    <mat-label>Legacy form field</mat-label>
+                    <input matInput placeholder="Placeholder" formControlName='name'>
+                    <mat-error *ngIf="user.hasError('required', 'name')">name is required</mat-error>
+                    <mat-icon matSuffix>votre nom</mat-icon>
+                    <mat-hint>Hint</mat-hint>
+                  </mat-form-field>
+                </p>
+                <p>
+                  <mat-form-field appearance="standard">
+                    <mat-label>Standard form field</mat-label>
+                    <input matInput  placeholder="example @.hotmail.fr"  formControlName='email'    [errorStateMatcher]="matchemail ">
+                    <mat-error *ngIf="user.hasError('email', 'email')">Email is falase</mat-error>
+                    <mat-error *ngIf="user.hasError('required', 'email')">Email is required</mat-error>
+                    <mat-error *ngIf="user.hasError('obj1')">c'est deja connue</mat-error>
+                    <mat-icon matSuffix>votre email</mat-icon>
+                    <mat-hint>Hint</mat-hint>
+                  </mat-form-field>
+                </p>
+             
+                <p>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Fill form field</mat-label>
+                    <input matInput type="password" placeholder="Placeholder" formControlName='pas'>
+                    <mat-error *ngIf="user.hasError('pattern', 'pas')">passe is falase</mat-error>
+                    <mat-error *ngIf="user.hasError('required', 'pas')">pasee is required</mat-error>
+                    <mat-icon matSuffix>votre mot de passe</mat-icon>
+                    <mat-hint>Hint</mat-hint>
+                  </mat-form-field>
+                </p>
+                <p>
+                  <mat-form-field appearance="outline">
+                    <mat-label>Outline form field</mat-label>
+                    <input matInput type="password" placeholder="Placeholder" formControlName='cpas'  [errorStateMatcher]="matcher">
+                    <mat-error *ngIf="user.hasError('obj')">Passwords don't exactly</mat-error>
+                    <mat-icon matSuffix>confirmer mot de passe</mat-icon>
+                    <mat-hint>Hint</mat-hint>
+                  </mat-form-field>
+                </p>
+                
+                <button mat-button color="primary" type="submit" [disabled]='!user.valid' (click)='onSumbit()'>valider</button>
+                </form>
+                </div>
+                
+        </div>
+          <div class="col-sm-4"><h3><span class="badge bg-secondary">login</span></h3>
+            
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]='emaill' >
+                  <div id="emailHelp"  class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" [(ngModel)]='pasl' >
+                </div>
+                <div class="mb-3 form-check">
+                  
+                  <label *ngIf='testl' class="form-check-label" for="exampleCheck1" >mots de passe incorrect</label>
+                </div>
+                <button type="submit" class="btn btn-primary" (click)='login()'>Submit</button>
+              </div>
+        </div>
+        </div>
+    </div>
+    
+    </div>
+    
+    
+    
+  
+      
+ 
+  
+  
+      <!--Main Navigation-->
+      
+  <!--Main Navigation-->
+  
+   
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    

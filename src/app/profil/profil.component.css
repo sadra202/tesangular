@@ -1,0 +1,23 @@
+
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+body {
+    background-image:url("https://www.studyrama.com/IMG/arton94853.png") !important ;
+}
+
+.profile img {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    display: inline;
+    
+}
+.a{
+    float:right;
+}
+.profil{
+
+    height: 50% !important;
+    width: 50% !important; 
+
+}

@@ -1,0 +1,61 @@
+<div>
+<form [formGroup]='user'>
+  <p>
+  <mat-form-field appearance="legacy">
+    <mat-label>Legacy form field</mat-label>
+    <input matInput placeholder="Placeholder" formControlName='name'>
+    <mat-error *ngIf="user.hasError('required', 'name')">name is required</mat-error>
+    <mat-icon matSuffix>votre nom</mat-icon>
+    <mat-hint>Hint</mat-hint>
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance="standard">
+    <mat-label>Standard form field</mat-label>
+    <input matInput  placeholder="example @.hotmail.fr"  formControlName='email' [errorStateMatcher]="matchemail ">
+    <mat-error *ngIf="user.hasError('email', 'email')">Email is falase</mat-error>
+    <mat-error *ngIf="user.hasError('required', 'email')">Email is required</mat-error>
+    <mat-error *ngIf="user.hasError('obj1')">Email don't exactly</mat-error>
+    <mat-icon matSuffix>votre email</mat-icon>
+    <mat-hint>Hint</mat-hint>
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance="fill">
+    <mat-label>Select an option</mat-label>
+    <mat-select [(value)]="type" formControlName="sex">
+      <mat-option>None</mat-option>
+      <mat-option value="sport">sport</mat-option>
+      <mat-option value="culture">culture</mat-option>
+      <mat-option value="poltique">poltique</mat-option>
+    </mat-select>
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance="fill">
+    <mat-label>Fill form field</mat-label>
+    <input matInput type="password" placeholder="Placeholder" formControlName='pas'>
+    <mat-error *ngIf="user.hasError('pattern', 'pas')">passe is falase</mat-error>
+    <mat-error *ngIf="user.hasError('required', 'pas')">pasee is required</mat-error>
+    <mat-icon matSuffix>votre mot de passe</mat-icon>
+    <mat-hint>Hint</mat-hint>
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance="outline">
+    <mat-label>Outline form field</mat-label>
+    <input matInput type="password" placeholder="Placeholder" formControlName='cpas'  [errorStateMatcher]="matcher">
+    <mat-error *ngIf="user.hasError('obj')">Passwords don't exactly</mat-error>
+    <mat-icon matSuffix>confirmer mot de passe</mat-icon>
+    <mat-hint>Hint</mat-hint>
+  </mat-form-field>
+</p>
+
+<button mat-button color="primary" type="submit" [disabled]='!user.valid' (click)='onSumbit()'>valider</button>
+</form>
+</div>
+<highcharts-chart
+   [Highcharts] = "highcharts" 
+   [options] = "chartOptions" 
+   style = "width: 100%; height: 400px; display: block;">
+</highcharts-chart>
